@@ -17,14 +17,6 @@ exports.getTask = (req, res, next) => {
 };
 
 
-exports.postFilter = (req, res, next) => {
- const filterOption = req.body.selectedValue;
-
-};
- 
-
-
-
 
 exports.postTask = (req, res, next) => {
   const title = req.body.title;
