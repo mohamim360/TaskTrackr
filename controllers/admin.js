@@ -1,7 +1,6 @@
 const Task = require("../models/task");
 
 exports.getTask = (req, res, next) => {
-
   Task.findAll()
     .then((tasks) => {
       res.render("task", {
