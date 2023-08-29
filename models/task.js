@@ -9,11 +9,18 @@ const Task = sequelize.define("task", {
     allowNull: false,
     primaryKey: true,
   },
-  title: Sequelize.STRING,
-	date: {
-    type: Sequelize.DATE,
+  title: {
+    type: Sequelize.STRING,
+    allowNull: false,
   },
- 
+  date: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
+	completed: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
+  }
 });
- 
+
 module.exports = Task;
