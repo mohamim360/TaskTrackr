@@ -43,9 +43,13 @@ TaskTrackr is a user-friendly yet powerful Todo List application designed to hel
 To set up the TaskTrackr project on your local machine, follow these steps:
 
 1. **Clone the Repository**: Begin by cloning the TaskTrackr repository to your computer. Open your terminal and run the following command:
-
+   MAIN BRANCH
    ```bash
    git clone https://github.com/mohamim360/TaskTrackr.git
+   ```
+   SECOND BRANCH
+      ```bash
+   git clone -b dev https://github.com/mohamim360/TaskTrackr.git
    ```
 
 2. **Navigate to the Project Directory**: Change your working directory to the cloned repository's folder:
