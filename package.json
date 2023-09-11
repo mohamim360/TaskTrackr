@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "build": "ejs-cli ./views -o ./dist"
+    "build": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -17,8 +17,5 @@
     "express": "^4.18.2",
     "mysql2": "^3.6.0",
     "sequelize": "^6.32.1"
-  },
-  "devDependencies": {
-    "ejs-cli": "^2.2.3"
   }
 }

@@ -24,13 +24,22 @@
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-row align-items-center">
+
                         <input type="text" class="form-control form-control-lg me-3" id="exampleFormControlInput1"
-                          placeholder="Add new task..." name="title"
-                          value="<% if (editing) { %><%= tsk.title %><% } %>" />
-                        <i class="fas fa-calendar-alt fa-lg me-3" id="date-icon"></i>
-                        <input type="hidden" id="selectedDate" name="date" 
-                        />
-                        
+                          placeholder="Add new task..." name="title" value="<% if (editing) { %><%= tsk.title %><% } %>"
+                          required />
+
+
+
+
+                        </p>
+                        <div class="card-body">
+                          <div class="d-flex flex-row align-items-center">
+                            <input type="date" name="date" class="form-control" id="dateInput" value="<% if (editing) { %><%=
+                              new Date(tsk.date).toISOString().split('T')[0]  %><% } %>" required />
+                          </div>
+                        </div>
+
 
                         <% if (editing) { %>
                           <input type="hidden" value="<%= tsk.id %>" name="taskId">
@@ -41,43 +50,25 @@
                             </button>
                       </div>
                     </div>
-                    <div class="card-body" id="date-input-container" style="display: none;">
-                      <div class="d-flex flex-row align-items-center">
-                        <i class="fas fa-calendar-alt fa-lg me-3"></i>
-                        <input type="date" class="form-control" id="dateInput"
-                          value="<% if (editing) { %><%= tsk.date %><% } %>" />
-                      </div>
-                    </div>
+
                   </div>
 
                 </div>
                 <hr class="my-4" />
               </form>
-              <%- include('addedTasks.ejs', { tsk: tsk,editing: editing }) %>
+              <% if (editing) { %><a href="/" class="btn btn-success">Home</a>
+                <% }%>
+           
+                  <%- include('addedTasks.ejs', { tsk: tsk,editing: editing }) %>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    const dateIcon = document.getElementById('date-icon');
-    const dateInputContainer = document.getElementById('date-input-container');
-    const selectedDateInput = document.getElementById('selectedDate');
-    const addButton = document.getElementById('addButton');
-
-    dateIcon.addEventListener('click', () => {
-      dateInputContainer.style.display = dateInputContainer.style.display === 'none' ? 'block' : 'none';
-    });
-
-    const dateInput = document.getElementById('dateInput');
-    dateInput.addEventListener('change', (event) => {
-      selectedDateInput.value = event.target.value;
-    });
-  </script>
 
 
 </body>
